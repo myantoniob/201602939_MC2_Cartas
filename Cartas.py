@@ -44,10 +44,13 @@ color_tres = []
 lista_colores = []
 
 cartas_total = []
-global contador
-contador = 1
+
 seleccion = 0
 
+   
+
+def reset_carta(carta):
+    carta.destroy() 
 
 def reset_frame(cartas_grupo):
      
@@ -134,7 +137,10 @@ def revolver1():
     button_tres.place(x=550+(position*10), y=(position*10)+260)
 
     n = int((len(lista_dos)  + 1) /2)
-    print(lista_dos[n-1])
+    #print(lista_dos[n-1])
+
+    carta_elegida = Label(main_label, text=f'Carta Eligida # {lista_dos[n-1]}')
+    carta_elegida.place(x=550, y=25)
 
     
 
@@ -192,8 +198,10 @@ def revolver2():
     button_tres.place(x=550+(position*10), y=(position*10)+260)
 
     n = int((len(lista_dos)  + 1) /2)
-    print(lista_dos[n-1])
+    #print(lista_dos[n-1])
 
+    carta_elegida = Label(main_label, text=f'Carta Eligida # {lista_dos[n-1]}')
+    carta_elegida.place(x=550, y=25)
 
 
 def revolver3():
@@ -249,8 +257,11 @@ def revolver3():
     button_tres.place(x=550+(position*10), y=(position*10)+260)
 
     n = int((len(lista_dos)  + 1) /2)
-    print(lista_dos[n-1])
+    #print(lista_dos[n-1])
 
+    
+    carta_elegida = Label(main_label, text=f'Carta Eligida # {lista_dos[n-1]}')
+    carta_elegida.place(x=550, y=25)
 
 
 
