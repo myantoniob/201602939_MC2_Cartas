@@ -32,11 +32,186 @@ cantidad_cartas = 9
 cartas1 = []
 cartas2 = []
 cartas3 = []
+lista_uno = []
+lista_dos = []
+lista_tres = []
+lista_numeros = []
 
+cartas_total = []
+contador = [1]
 seleccion = 0
-button_uno = Button(main_label, text="  Grupo 1 ")
-button_dos = Button(main_label, text="  Grupo 2   ")
-button_tres = Button(main_label, text=" Grupo 3 ")
+
+def revolver1():
+    
+    for carta in range(len(cartas2)): 
+        cartas_total.append(cartas2.pop(0))
+        lista_numeros.append(lista_dos.pop(0))
+    
+    for carta in range(len(cartas1)): 
+        cartas_total.append(cartas1.pop(0))
+        lista_numeros.append(lista_uno.pop(0))
+
+    
+    for carta in range(len(cartas3)): 
+        cartas_total.append(cartas3.pop(0))
+        lista_numeros.append(lista_tres.pop(0))
+
+    if len(lista_numeros) == 9:
+        contador[0] = contador[0] + 1
+        if contador[0] == 2:
+            option = int((len(cartas_total) + 1) / 2)
+            print(lista_numeros[option])
+
+    elif len(lista_numeros) == 15 or len(lista_numeros) == 15 or len(lista_numeros) == 21 or len(lista_numeros) == 27:
+        pass 
+
+    carta_grupo = int(len(cartas_total) / 3)
+    
+    #reset_frame(carta_grupo)
+
+    for i in range(carta_grupo):
+        cartas1.append(cartas_total.pop(0))
+        cartas2.append(cartas_total.pop(0))
+        cartas3.append(cartas_total.pop(0))
+
+        lista_uno.append(lista_numeros.pop(0))
+        lista_dos.append(lista_numeros.pop(0))
+        lista_tres.append(lista_numeros.pop(0))
+    
+    for i in range(carta_grupo):
+        cartas1[i].place(x=0, y=10000)
+        cartas2[i].place(x=0, y=10000)
+        cartas3[i].place(x=0, y=10000)
+
+    for i in range(carta_grupo):
+        cartas1[i].place(x=30+(i*10), y=100+(i*10))
+        position = i
+    
+    #button_uno = Button(main_label, text="  Grupo 1 ")
+    button_uno.place(x=30+(position*10), y=(position*10)+260)
+
+    for i in range(carta_grupo):
+        cartas2[i].place(x=290+(i*10), y=100+(i*10))
+        position = i
+
+    #button_dos = Button(main_label, text="  Grupo 2   ")
+    button_dos.place(x=290+(i*10), y=(i*10)+260)
+
+    for i in range(carta_grupo):
+        cartas3[i].place(x=550+(i*10), y=100+(i*10))
+        position = i 
+
+    #button_tres = Button(main_label, text=" Grupo 3 ")
+    button_tres.place(x=550+(position*10), y=(position*10)+260)
+    
+
+def revolver2():
+    for carta in range(len(cartas1)): 
+        cartas_total.append(cartas1.pop(0))
+
+    
+    for carta in range(len(cartas2)): 
+        cartas_total.append(cartas2.pop(0))
+
+    
+    for carta in range(len(cartas3)): 
+        cartas_total.append(cartas3.pop(0))
+
+    
+
+    carta_grupo = int(len(cartas_total) / 3)
+    
+    #reset_frame(carta_grupo)
+
+    for i in range(carta_grupo):
+        cartas1.append(cartas_total.pop(0))
+        cartas2.append(cartas_total.pop(0))
+        cartas3.append(cartas_total.pop(0))
+    
+    for i in range(carta_grupo):
+        cartas1[i].place(x=0, y=10000)
+        cartas2[i].place(x=0, y=10000)
+        cartas3[i].place(x=0, y=10000)
+
+    for i in range(carta_grupo):
+        cartas1[i].place(x=30+(i*10), y=100+(i*10))
+        position = i
+    
+    #button_uno = Button(main_label, text="  Grupo 1 ")
+    button_uno.place(x=30+(position*10), y=(position*10)+260)
+
+    for i in range(carta_grupo):
+        cartas2[i].place(x=290+(i*10), y=100+(i*10))
+        position = i
+
+    #button_dos = Button(main_label, text="  Grupo 2   ")
+    button_dos.place(x=290+(i*10), y=(i*10)+260)
+
+    for i in range(carta_grupo):
+        cartas3[i].place(x=550+(i*10), y=100+(i*10))
+        position = i 
+
+    #button_tres = Button(main_label, text=" Grupo 3 ")
+    button_tres.place(x=550+(position*10), y=(position*10)+260)
+
+
+
+def revolver3():
+    for carta in range(len(cartas1)): 
+        cartas_total.append(cartas1.pop(0))
+
+    
+    for carta in range(len(cartas3)): 
+        cartas_total.append(cartas3.pop(0))
+
+    
+    for carta in range(len(cartas2)): 
+        cartas_total.append(cartas2.pop(0))
+
+    
+
+    carta_grupo = int(len(cartas_total) / 3)
+    
+    #reset_frame(carta_grupo)
+
+    for i in range(carta_grupo):
+        cartas1.append(cartas_total.pop(0))
+        cartas2.append(cartas_total.pop(0))
+        cartas3.append(cartas_total.pop(0))
+    
+    for i in range(carta_grupo):
+        cartas1[i].place(x=0, y=10000)
+        cartas2[i].place(x=0, y=10000)
+        cartas3[i].place(x=0, y=10000)
+
+    for i in range(carta_grupo):
+        cartas1[i].place(x=30+(i*10), y=100+(i*10))
+        position = i
+    
+    #button_uno = Button(main_label, text="  Grupo 1 ")
+    button_uno.place(x=30+(position*10), y=(position*10)+260)
+
+    for i in range(carta_grupo):
+        cartas2[i].place(x=290+(i*10), y=100+(i*10))
+        position = i
+
+    #button_dos = Button(main_label, text="  Grupo 2   ")
+    button_dos.place(x=290+(i*10), y=(i*10)+260)
+
+    for i in range(carta_grupo):
+        cartas3[i].place(x=550+(i*10), y=100+(i*10))
+        position = i 
+
+    #button_tres = Button(main_label, text=" Grupo 3 ")
+    button_tres.place(x=550+(position*10), y=(position*10)+260)
+
+
+
+
+
+button_uno = Button(main_label, text="  Grupo 1 ", command = revolver1)
+button_dos = Button(main_label, text="  Grupo 2   ", command = revolver2)
+button_tres = Button(main_label, text=" Grupo 3 ", command = revolver3)
 def reset_frame(cartas_grupo):
     
     for i in range(cartas_grupo):
@@ -56,8 +231,9 @@ def reset_frame(cartas_grupo):
     button_tres.pack_forget()
 
 
-def onclick(event):
-    event.widget.config(bg='yellow')
+#def onclick(event):
+#    event.widget.config(bg='yellow')
+
 
 def iniciar():
     position = 0
@@ -76,8 +252,9 @@ def iniciar():
         reset_frame(len(cartas1))
 
     for i in range(cartas_grupo):
-        cartas1.append(LabelFrame(main_label, width=100, height=150, background="red"))
-        cartas1[i].bind("<Button-1>", onclick )
+        cartas1.append(LabelFrame(main_label, width=100, height=150, background="red", text=i + 1))
+        lista_uno.append(i+1)
+        #cartas1[i].bind("<Button-1>", onclick )
         cartas1[i].place(x=30+(i*10), y=100+(i*10))
         position = i
 
@@ -85,8 +262,9 @@ def iniciar():
     button_uno.place(x=30+(position*10), y=(position*10)+260)
 
     for i in range(cartas_grupo):
-        cartas2.append(LabelFrame(main_label, width=100, height=150, background="blue"))
-        cartas2[i].bind("<Button-1>", onclick )
+        cartas2.append(LabelFrame(main_label, width=100, height=150, background="blue", text=cartas_grupo + i + 1))
+        lista_dos.append(cartas_grupo + i + 1)
+        #cartas2[i].bind("<Button-1>", onclick )
         cartas2[i].place(x=290+(i*10), y=100+(i*10))
         position = i
 
@@ -95,8 +273,9 @@ def iniciar():
 
 
     for i in range(cartas_grupo):
-        cartas3.append(LabelFrame(main_label, width=100, height=150, background="green"))
-        cartas3[i].bind("<Button-1>", onclick )
+        cartas3.append(LabelFrame(main_label, width=100, height=150, background="green", text=cartas_grupo*2 + i + 1))
+        lista_tres.append(cartas_grupo*2 + i + 1)
+        #cartas3[i].bind("<Button-1>", onclick )
         cartas3[i].place(x=550+(i*10), y=100+(i*10))
         position = i 
 
